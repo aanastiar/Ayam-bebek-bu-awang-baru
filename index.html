@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ayam Bu Awang — Ayam & Bebek Goreng Rumahan</title>
+  <meta name="description" content="Ayam Bu Awang - ayam dan bebek goreng bumbu Nusantara. Menu rumahan, lezat, dan hangat." />
+  <style>
+    /* Palette: kuning hangat, merah gelap, coklat keemasan */
+    :root{
+      --yellow:#F6C046;
+      --maroon:#8B1E1E;
+      --brown:#8B5A2B;
+      --cream:#FFF8F0;
+      --text:#2b2b2b;
+      --muted:#6b6b6b;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+      background:linear-gradient(180deg,var(--cream),#fff);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+    }
+    .container{max-width:var(--max-width);margin:0 auto;padding:20px;}
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo{
+      width:64px;height:64px;border-radius:12px;overflow:hidden;
+      background:linear-gradient(135deg,var(--yellow),var(--brown));
+      display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;
+      box-shadow:0 4px 10px rgba(139,26,26,0.12);
+    }
+    nav{display:flex;gap:12px;align-items:center;}
+    nav a{color:var(--text);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600;}
+    nav a.cta{background:var(--maroon);color:#fff;padding:10px 14px}
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:20px;
+      align-items:center;
+      margin:18px 0 28px;
+    }
+    .hero-card{
+      background:linear-gradient(180deg,rgba(255,255,255,0.9),#fff);
+      padding:20px;border-radius:14px;box-shadow:0 6px 22px rgba(139,90,43,0.08);
+    }
+    .eyebrow{display:inline-block;background:var(--yellow);padding:6px 10px;border-radius:8px;font-weight:700}
+    h1{margin:12px 0 8px;font-size:28px}
+    p.lead{color:var(--muted);margin:0 0 16px}
+    .hero-ctas{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn-primary{background:var(--maroon);color:white}
+    .btn-ws{background:var(--yellow);color:var(--text)}
+    .hero-photo{border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(139,90,43,0.12)}
+    .hero-photo img{display:block;width:100%;height:100%;object-fit:cover}
+    /* Highlights */
+    .highlights{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
+    .chip{background:#fff;padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.04);font-weight:600}
+    /* Menu grid */
+    .section{margin:36px 0}
+    .section h2{margin-bottom:12px}
+    .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .menu-card{background:#fff;border-radius:12px;padding:10px;box-shadow:0 6px 20px rgba(0,0,0,0.04);display:flex;gap:10px;align-items:center}
+    .menu-thumb{width:96px;height:72px;border-radius:8px;overflow:hidden;flex-shrink:0}
+    .menu-thumb img{width:100%;height:100%;object-fit:cover}
+    .menu-info h3{margin:0;font-size:16px}
+    .price{font-weight:800;color:var(--brown)}
+    .menu-actions{margin-top:8px}
+    .small-btn{padding:8px 10px;border-radius:8px;text-decoration:none;font-weight:700}
+    /* About & location */
+    .two-col{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start}
+    .map-placeholder{height:260px;border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.06)}
+    .operational{background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+    /* Testimonials */
+    .testi{background:linear-gradient(90deg,#fff,#fff);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.03)}
+    footer{padding:28px 0;border-top:1px dashed rgba(0,0,0,0.05);margin-top:20px}
+    .muted{color:var(--muted)}
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .two-col{grid-template-columns:1fr}
+      .menu-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      .menu-grid{grid-template-columns:1fr}
+      nav{display:none}
+    }
+    /* small utility */
+    .center{text-align:center}
+    .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+  <img src="png/logo-bu-awang-hd.png" alt="Logo Ayam Bu Awang">
+</div>
+
+        <div>
+          <div style="font-weight:800">Ayam Bu Awang</div>
+          <div class="muted" style="font-size:13px">Ayam & Bebek Goreng Bumbu Nusantara</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">Tentang</a>
+        <a href="#lokasi">Lokasi</a>
+        <a class="cta" href="#pesan">Pesan</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-card">
+        <span class="eyebrow">Rumahan • Lezat</span>
+        <h1>Ayam & Bebek Goreng Bumbu Nusantara</h1>
+        <p class="lead">Rasa rumah yang bikin rindu — potongan renyah, bumbu meresap, cocok untuk makan siang dan keluarga.</p>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#menu">Lihat Menu</a>
+          <a class="btn btn-ws" id="wa-cta" href="#" aria-label="Pesan via WhatsApp">Pesan via WhatsApp</a>
+          
+        </div>
+
+        <div class="highlights" style="margin-top:14px">
+          <div class="chip">Delivery</div>
+          <div class="chip">Pickup</div>
+          <div class="chip">Halal</div>
+        </div>
+
+        <div style="margin-top:16px" class="muted">*Menu & harga bisa berubah. Foto produk disediakan oleh owner.</div>
+      </div>
+
+      <div class="hero-photo" aria-hidden="true">
+        <!-- Ganti src dengan foto produk nyata -->
+        <img src="png/foto produk lengkap.jpeg" alt="Ayam goreng bumbu - Ayam Bu Awang">
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="section">
+      <h2>Menu Unggulan</h2>
+      <p class="muted">Pilihan paling favorit pelanggan.</p>
+
+      <div class="menu-grid" role="list">
+
+  <!-- ========================
+       KATEGORI 1 — ANEKA BEBEK
+       ======================== -->
+  <h2 style="grid-column:1/-1;margin-top:20px">Aneka Bebek</h2>
+
+  <!-- Bebek Goreng 1 Ekor -->
+  <article class="menu-card" role="listitem">
+    <div class="menu-thumb"><img src="png/ayam goreng 1 ekor.jpeg" alt="Bebek Goreng 1 Ekor"></div>
+    <div class="menu-info">
+      <h3>Bebek Goreng 1 Ekor</h3>
+      <div class="price">Rp125.000</div>
+      <div class="menu-actions">
+        <a class="small-btn" href="#" data-item="Bebek Goreng 1 Ekor">Pesan via WA</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Paket Bebek Elit -->
+  <article class="menu-card" role="listitem">
+    <div class="menu-thumb"><img src="png/paket bebek elit.jpeg" alt="Paket Bebek Elit"></div>
+    <div class="menu-info">
+      <h3>Paket Bebek Elit</h3>
+      <div class="price">Rp45.000</div>
+      <div class="menu-actions">
+        <a class="small-btn" href="#" data-item="Paket Bebek Elit">Pesan via WA</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Bebek Ungkep -->
+  <article class="menu-card" role="listitem">
+    <div class="menu-thumb"><img src="png/bebek ungkep.jpeg" alt="Bebek Ungkep"></div>
+    <div class="menu-info">
+      <h3>Bebek Ungkep</h3>
+      <div class="price">Rp110.000</div>
+      <div class="menu-actions">
+        <a class="small-btn" href="#" data-item="Bebek Ungkep">Pesan via WA</a>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- =============================
+       KATEGORI 2 — ANEKA AYAM KAMPUNG
+       ============================= -->
+  <h2 style="grid-column:1/-1;margin-top:20px">Aneka Ayam Kampung</h2>
+
+  <!-- Ayam Kampung 1 Ekor -->
+  <article class="menu-card" role="listitem">
+    <div class="menu-thumb"><img src="png/ayam kampung goreng.jpeg" alt="Ayam Kampung Goreng 1 Ekor"></div>
+    <div class="menu-info">
+      <h3>Ayam Kampung Goreng 1 Ekor</h3>
+      <div class="price">Rp95.000</div>
+      <div class="menu-actions">
+        <a class="small-btn" href="#" data-item="Ayam Kampung Goreng 1 Ekor">Pesan via WA</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Ayam Kampung Ungkep -->
+  <article class="menu-card" role="listitem">
+    <div class="menu-thumb"><img src="png/ayam kampung ungkep.jpeg" alt="Ayam Kampung Ungkep"></div>
+    <div class="menu-info">
+      <h3>Ayam Kampung Ungkep</h3>
+      <div class="price">Rp85.000</div>
+      <div class="menu-actions">
+        <a class="small-btn" href="#" data-item="Ayam Kampung Ungkep">Pesan via WA</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Ayam Kampung Goreng -->
+  <article class="menu-card" role="listitem">
+    <div class="menu-thumb"><img src="png/ayam kampung gorengg.jpeg" alt="Ayam Kampung Goreng"></div>
+    <div class="menu-info">
+      <h3>Ayam Kampung Goreng</h3>
+      <div class="price">Rp30.000</div>
+      <div class="menu-actions">
+        <a class="small-btn" href="#" data-item="Ayam Kampung Goreng">Pesan via WA</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- =============================
+       KATEGORI 3 — ANEKA AYAM NEGRI
+       ============================= -->
+  <h2 style="grid-column:1/-1;margin-top:20px">Aneka Ayam Negri</h2>
+
+  <!-- Ayam Negri Ungkep -->
+  <article class="menu-card" role="listitem">
+    <div class="menu-thumb"><img src="png/ayam negri ungkep.jpeg" alt="Ayam Negri Ungkep"></div>
+    <div class="menu-info">
+      <h3>Ayam Negri Ungkep</h3>
+      <div class="price">Rp75.000</div>
+      <div class="menu-actions">
+        <a class="small-btn" href="#" data-item="Ayam Negri Ungkep">Pesan via WA</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Ayam Negri Goreng 1 Ekor -->
+  <article class="menu-card" role="listitem">
+    <div class="menu-thumb"><img src="png/ayam negri goreng 1 ekor.jpeg" alt="Ayam Negri Goreng 1 Ekor"></div>
+    <div class="menu-info">
+      <h3>Ayam Negri Goreng 1 Ekor</h3>
+      <div class="price">Rp80.000</div>
+      <div class="menu-actions">
+        <a class="small-btn" href="#" data-item="Ayam Negri Goreng 1 Ekor">Pesan via WA</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Ayam Negri Goreng -->
+  <article class="menu-card" role="listitem">
+    <div class="menu-thumb"><img src="png/ayam negri goreng.jpeg" alt="Ayam Negri Goreng"></div>
+    <div class="menu-info">
+      <h3>Ayam Negri Goreng</h3>
+      <div class="price">Rp22.000</div>
+      <div class="menu-actions">
+        <a class="small-btn" href="#" data-item="Ayam Negri Goreng 22rb">Pesan via WA</a>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2>Tentang Kami</h2>
+      <div class="two-col">
+        <div>
+          <p>Ayam Bebek Bu Awang, Karawaci Residence merupakan sebuah tempat makan yang berada di Jakarta. Rumah makan ini menyajikan berbagai menu ayam & bebek & aneka nasi yang dibanderol dengan harga yang murah dan bersahabat dengan kantong Anda. Jika Anda mencari daftar harga menu Ayam Bebek Bu Awang, Karawaci Residence, Anda berada di tempat yang tepat.</p>
+          <p class="muted">Nilai kami: cita rasa rumahan, kebersihan, layanan cepat. Foto dan logo akan diganti dengan aset resmi milik owner.</p>
+
+          <h3 style="margin-top:12px">Testimoni</h3>
+          <div class="testi">"Rasanya kaya rumahan, sambalnya mantap!" — <em>Andi, Mahasiswa</em></div>
+        </div>
+
+        <aside>
+          <div class="map-placeholder" id="map">
+            <!-- Embed Google Maps di sini (iframe) atau ganti dengan plugin peta -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1099011660426!2d106.60405957402551!3d-6.249246561186738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fdafe634edcf%3A0xc77386ff580073be!2sAyam%20Bebek%20Bu%20Awang!5e0!3m2!1sid!2sid!4v1763517422102!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div style="margin-top:10px" class="operational">
+            <strong>Jam Operasional</strong>
+            <div class="muted" style="margin-top:6px">Senin - Sabtu: 10:00 — 20:00<br>Minggu: 10:00 — 18:00</div>
+            <div style="margin-top:8px">
+              <strong>Kontak</strong>
+              <div class="muted">WhatsApp: <a id="wa-num" href="#">0812-xxxx-xxxx</a></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PESAN / FORM -->
+    <section id="pesan" class="section">
+      <h2>Pesan Sekarang</h2>
+      <p class="muted">Isi form sederhana berikut untuk pesanan. (Opsional: integrasikan ke backend atau Google Forms).</p>
+
+      <form id="order-form" style="background:#fff;padding:16px;border-radius:12px;box-shadow:0 8px 22px rgba(0,0,0,0.04);max-width:720px">
+        <div style="display:grid;grid-template-columns:1fr 160px;gap:10px;margin-bottom:10px">
+          <input name="name" required placeholder="Nama lengkap" />
+          <input name="phone" required placeholder="No. WhatsApp" />
+        </div>
+
+        <div style="margin-bottom:10px">
+          <select name="item" required>
+            <option value="">Pilih menu</option>
+            <option>Ayam Goreng Bumbu — Porsi Regular</option>
+            <option>Bebek Goreng Sambal Matah</option>
+            <option>Paket Hemat (Ayam + Nasi)</option>
+          </select>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button type="submit" class="btn btn-primary">Kirim Pesanan</button>
+          <button type="button" id="direct-wa" class="btn btn-ws">Pesan via WhatsApp</button>
+        </div>
+
+        <div id="form-msg" style="margin-top:10px;color:var(--muted)"></div>
+      </form>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <strong>Ayam Bu Awang</strong> • Rasa rumahan yang bikin rindu.
+          <div class="muted" style="font-size:13px;margin-top:6px">Website sederhana ini dibuat berdasarkan design brief project. Referensi & struktur diambil dari brief yang disediakan.</div>
+          <div class="muted" style="font-size:12px;margin-top:6px">Sumber brief: desain & arahan proyek.</div>
+        </div>
+
+        <div class="center muted">© <span id="year"></span> Ayam Bu Awang</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Ganti nomor WA default di sini (international format recommended, e.g. 62812xxxxxxx)
+    const WA_NUMBER = "6282310784271"; // <-- ganti ini
+    const WA_MESSAGE = encodeURIComponent("Halo Ayam Bu Awang, saya ingin pesan: ");
+
+    // helper buat buka WA
+    function openWhatsApp(text){
+      const url = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text);
+      window.open(url, "_blank");
+    }
+
+    // CTA header
+    document.getElementById("wa-cta").addEventListener("click", function(e){
+      e.preventDefault();
+      openWhatsApp("Halo, saya mau pesan. (sebutkan menu)");
+    });
+
+    // direct WA tombol di form
+    document.getElementById("direct-wa").addEventListener("click", function(){
+      const name = document.querySelector('input[name="name"]').value || "";
+      const phone = document.querySelector('input[name="phone"]').value || "";
+      const item = document.querySelector('select[name="item"]').value || "";
+      const msg = `Halo, saya ${name} (${phone}). Saya pesan: ${item}`;
+      openWhatsApp(msg);
+    });
+
+    // small handlers for per-item WA links
+    document.querySelectorAll('.menu-actions a, .small-btn').forEach(btn=>{
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        const item = this.dataset.item || this.textContent.trim();
+        openWhatsApp("Halo, saya mau pesan: " + item);
+      });
+    });
+
+    // simple form submit (front-end only)
+    document.getElementById('order-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = this.name.value.trim();
+      const phone = this.phone.value.trim();
+      const item = this.item.value;
+      if(!name || !phone || !item){
+        document.getElementById('form-msg').textContent = "Isi semua bidang sebelum mengirim.";
+        return;
+      }
+      // create WA message and open
+      const msg = `Halo, saya ${name} (${phone}). Saya ingin pesan: ${item}`;
+      openWhatsApp(msg);
+    });
+
+    // small runtime touches
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Update WA link display in contact area
+    document.getElementById('wa-num').setAttribute('href', "https://wa.me/" + WA_NUMBER);
+    document.getElementById('wa-num').textContent = WA_NUMBER.replace(/^62/, "0"); // pref show as local
+  </script>
+</body>
+</html>
